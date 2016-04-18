@@ -7,7 +7,7 @@ public class twosum {
         int right = nums.length;
         int[] soln = new int[2];
         for (int i = 0; i < right; i++) {
-            for (int j = 1; j < right; j++) {
+            for (int j = i + 1; j < right; j++) {
                 int tempSum = nums[i] + nums[j];
                 if (tempSum == target) {
                     soln[0] = i;
@@ -18,8 +18,8 @@ public class twosum {
         return soln;
     }
     public static void main(String[] args) {
-        int[] nums = {2, 7, 11, 15};
-        int target = 9;
+        int[] nums = {0, 4, 3, 0};
+        int target = 0;
         System.out.println(twoSum(nums, target)[0]);
         System.out.println(twoSum(nums, target)[1]);
     }
