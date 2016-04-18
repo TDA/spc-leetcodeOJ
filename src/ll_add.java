@@ -38,6 +38,41 @@ public class ll_add {
         return soln;
     }
 
+    public ListNode addTwoNumbersLL(ListNode l1, ListNode l2) {
+        if (l1 == null || l2 == null) {
+            return l1 == null? l2 : l1;
+        }
+        ListNode n = new ListNode(l1.val + l2.val);
+        ListNode soln = n;
+        l1 = l1.next;
+        l2 = l2.next;
+        int carry = 0;
+        while (l1 != null || l2 != null) {
+            if (l1 == null) {
+                l1 = new ListNode(0);
+            }
+            if (l2 == null) {
+                l2 = new ListNode(0);
+            }
+            System.out.println(l1.val);
+            System.out.println(l2.val);
+
+            int sum = l1.val + l2.val + carry;
+            if (sum >= 10 ) {
+                sum = sum % 10;
+                carry = 1;
+            } else {
+                carry = 0;
+            }
+            n.next = new ListNode(sum);
+            l1 = l1.next;
+            l2 = l2.next;
+            n = n.next;
+        }
+
+        return soln;
+    }
+
 
     public static void main(String[] args) {
         ll_add llAdd = new ll_add();
@@ -47,8 +82,8 @@ public class ll_add {
 
         ListNode y = new ListNode(5);
         y.next = new ListNode(6);
-        y.next.next = new ListNode(4);
-        System.out.println(llAdd.addTwoNumbers(x,y));
+        //y.next.next = new ListNode(4);
+        System.out.println(llAdd.addTwoNumbersLL(x,y));
 
     }
 }
