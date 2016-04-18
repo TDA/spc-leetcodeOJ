@@ -12,8 +12,8 @@ public class twosumOptimized {
         for (int i = 0; i < nums.length; i++) {
             int tempSum = target - nums[i];
             System.out.println(i + " " + tempSum);
-            if (hashMap.containsKey(tempSum)) {
-                soln[0] = hashMap.get(tempSum);
+            if (hashMap.containsKey(nums[i])) {
+                soln[0] = hashMap.get(nums[i]);
                 soln[1] = i;
             } else {
                 hashMap.put(tempSum, i);
@@ -23,8 +23,8 @@ public class twosumOptimized {
         return soln;
     }
     public static void main(String[] args) {
-        int[] nums = {0, 4, 3, 0};
-        int target = 0;
+        int[] nums = {2, 7, 9, 11};
+        int target = 9;
         int[] soln = twoSum(nums, target);
         System.out.println(soln[0]);
         System.out.println(soln[1]);
