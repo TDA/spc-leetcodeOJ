@@ -26,14 +26,18 @@ public class removeduplicateletters {
             }
         }
         System.out.println(counts);
-        String sb = new String();
+        String sb = "";
+        int leastIndex = 26;
         for (String l : s.split("")) {
             if (counts.get(l) == 0) {
-                // cant remove, add to final
+                // cant remove, shd add to final
 
-                counts.put(l, counts.get(l) + 1);
             } else {
-                counts.put(l, 1);
+                // this is a repeated thing, shd we remove it?
+                // find least index
+                // this isnt as easy as I thought
+                // need to think from scratch :D
+
             }
         }
 
