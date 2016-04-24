@@ -55,7 +55,7 @@ public class LinkedList {
     }
 
     public void remove(int pos){
-        if(pos>counter||pos<1){
+        if(pos > counter || pos < 1){
             System.out.println("Position out of bounds "+pos);
             return;
         }
@@ -65,7 +65,7 @@ public class LinkedList {
             return;
         }
         Node n = head;
-        for(int i =0;i<pos-2;i++){
+        for(int i = 0; i < pos - 2; i++){
             n = n.next;
         }
         Node temp = n.next;
@@ -74,7 +74,7 @@ public class LinkedList {
     }
 
     public void insert(int DataToBeAdded, int pos){
-        if(pos>counter||pos<1){
+        if(pos > counter || pos < 1){
             System.out.println("Position out of bounds "+pos);
             return;
         }
@@ -86,7 +86,7 @@ public class LinkedList {
             return;
         }
         Node n = head;
-        for(int i =0;i<pos-2;i++){
+        for(int i = 0; i < pos - 2; i++){
             n = n.next;
         }
         Node nn = new Node(DataToBeAdded);
